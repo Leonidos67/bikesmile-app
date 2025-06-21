@@ -11,6 +11,37 @@
     --nav-border-color: #e0e0e0;
 }
 
+#browser-fallback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.fallback-content {
+    max-width: 450px;
+}
+
+.fallback-content p {
+    font-size: 1.1em;
+    color: var(--main-text-color);
+    line-height: 1.6;
+}
+
+.fallback-content .site-link-p {
+    margin-top: 25px;
+    font-size: 1em;
+    color: var(--hint-text-color);
+}
+
+.fallback-content .site-link {
+    color: var(--button-bg-color);
+    text-decoration: underline;
+}
+
 body {
     margin: 0;
     padding: 0 0 70px 0; /* Отступ снизу для нав. панели */
@@ -153,6 +184,18 @@ main#app {
 
 #fab-button:active {
     transform: scale(0.95);
+}
+
+.tg-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s;
 }
 
 .bottom-nav {

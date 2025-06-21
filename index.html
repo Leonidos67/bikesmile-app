@@ -9,58 +9,55 @@
 </head>
 <body>
     
-    <!--<header>
-        <h1 id="welcome-text"></h1>
-    </header>-->
-
-    <!-- Содержимое вкладок -->
-    <main id="app">
-        
-        <div id="home" class="tab-content">
-            <h1 id="welcome-text"></h1>
-            <p>Добро пожаловать в сервис проката велосипедов.</p>
-            <button id="start-rent">Начать аренду</button>
+    <div id="browser-fallback">
+        <div class="fallback-content">
+            <p>Для доступа к приложению, пожалуйста, откройте его в Telegram.</p>
+            <a href="https://t.me/bikesmile_bot/app" class="tg-link">Перейти в Telegram</a>
+            <p class="site-link-p">Для просмотра маршрутов, новостей и другой полезной информацией откройте наш основной сайт - <a href="https://bikesmile.tilda.ws/" class="site-link">Перейти на сайт</a>.</p>
         </div>
+    </div>
 
-        <div id="start" class="tab-content hidden">
-             <h2>Старт</h2>
-             <p>Здесь будет информация о начале аренды.</p>
-        </div>
-
-        <div id="profile" class="tab-content hidden">
-            <div id="profile-header">
-                <img id="user-avatar" src="" alt=" ">
+    <div id="telegram-app" class="hidden">
+        <main id="app">
+            
+            <div id="home" class="tab-content">
+                <p>Добро пожаловать в сервис проката велосипедов.</p>
+                <button id="start-rent">Начать аренду</button>
             </div>
-            <div id="profile-body">
-                <h3 id="user-name"></h3>
-                <p>
-                    Данные профиля недоступны
-                </p>
-                <p>
-                    Зайдите в наше приложение через Telegram
-                    <a href="https://t.me/bikesmile_bot/app">Перейти в Telegram</a>
-                </p>1
-            </div>2
-        </div>
-        
-    </main>
 
-    <button id="fab-button">Забронировать велосипед</button>
+            <div id="start" class="tab-content hidden">
+                 <h2>Старт</h2>
+                 <p>Здесь будет информация о начале аренды.</p>
+            </div>
 
-    <nav class="bottom-nav">
-        <button class="nav-button active" data-tab="home">
-            <img src="./assets/icons/home.png" alt="Главная">
-            <span>Главная</span>
-        </button>
-        <button class="nav-button" data-tab="start">
-            <img src="./assets/icons/start.png" alt="Старт">
-            <span>Старт</span>
-        </button>
-        <button class="nav-button" data-tab="profile">
-            <img src="./assets/icons/profile.png" alt="Профиль">
-            <span>Профиль</span>
-        </button>
-    </nav>
+            <div id="profile" class="tab-content hidden">
+                <div id="profile-header">
+                    <img id="user-avatar" src="" alt="Аватар">
+                </div>
+                <div id="profile-body">
+                    <h3 id="user-name"></h3>
+                    <p>Здесь будет информация о пользователе и его поездках.</p>
+                </div>
+            </div>
+        </main>
+
+        <button id="fab-button">Забронировать велосипед</button>
+
+        <nav class="bottom-nav">
+            <button class="nav-button active" data-tab="home">
+                <img src="./assets/icons/home.png" alt="Главная">
+                <span>Главная</span>
+            </button>
+            <button class="nav-button" data-tab="start">
+                <img src="./assets/icons/start.png" alt="Старт">
+                <span>Старт</span>
+            </button>
+            <button class="nav-button" data-tab="profile">
+                <img src="./assets/icons/profile.png" alt="Профиль">
+                <span>Профиль</span>
+            </button>
+        </nav>
+    </div>
 
     <script src="script.js"></script>
     
