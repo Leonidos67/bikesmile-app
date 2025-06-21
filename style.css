@@ -51,7 +51,7 @@ main#app {
     margin-bottom: 65px; /* Половина высоты аватара + отступ */
     background-image: repeating-linear-gradient(
         -45deg,
-        #000,
+        var(--nav-border-color),
         var(--nav-border-color) 4px,
         transparent 4px,
         transparent 8px
