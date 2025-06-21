@@ -45,9 +45,17 @@ main#app {
 }
 
 #profile-header {
+    border-radius: 10px;
     position: relative;
-    height: 20vh;
+    height: 10vh;
     margin-bottom: 65px; /* Половина высоты аватара + отступ */
+    background-image: repeating-linear-gradient(
+        -45deg,
+        var(--nav-border-color),
+        var(--nav-border-color) 4px,
+        transparent 4px,
+        transparent 8px
+    );
 }
 
 #cover-image {
@@ -114,7 +122,6 @@ main#app {
     font-size: 1.2em;
     border-radius: 12px;
     cursor: pointer;
-    margin-top: 20px;
     transition: background-color 0.3s, transform 0.2s;
 }
 
