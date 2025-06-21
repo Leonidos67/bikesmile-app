@@ -42,17 +42,6 @@
     text-decoration: underline;
 }
 
-body {
-    margin: 0;
-    padding: 0 0 70px 0; /* Отступ снизу для нав. панели */
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--app-bg-color);
-    color: var(--main-text-color);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
 header {
     text-align: center;
     padding: 20px 16px 10px;
@@ -63,6 +52,17 @@ header {
     font-weight: 600;
     color: var(--header-text-color);
     margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0 0 70px 0; /* Отступ снизу для нав. панели */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--app-bg-color);
+    color: var(--main-text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 main#app {

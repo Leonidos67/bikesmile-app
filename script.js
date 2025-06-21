@@ -3,12 +3,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const browserFallback = document.getElementById('browser-fallback');
 
     function initializeApp() {
+        const welcomeText = document.getElementById('welcome-text');
         const tabs = document.querySelectorAll('.tab-content');
         const navButtons = document.querySelectorAll('.nav-button');
         const userNameElement = document.getElementById('user-name');
         const userAvatarElement = document.getElementById('user-avatar');
         
-        const user = window.Telegram.WebApp.initDataUnsafe.user;
+        // Используем тестовые данные для браузера
+        const user = (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe.user)
+            ? window.Telegram.WebApp.initDataUnsafe.user
+            : { first_name: 'Тестовый', username: 'test_user', photo_url: 'https://cdn-icons-png.flaticon.com/512/149/149071.png' };
+
+        if (welcomeText && user) {
+            welcomeText.textContent = `Привет, ${user.first_name}!`;
+        }
 
         if (userNameElement && user) {
             userNameElement.textContent = user.username ? `@${user.username}` : user.first_name;
@@ -45,6 +53,16 @@ document.addEventListener('DOMContentLoaded', function() {
         switchTab('home');
     }
 
+    // --- ВРЕМЕННОЕ ИЗМЕНЕНИЕ ДЛЯ ПРОСМОТРА В БРАУЗЕРЕ ---
+    if (browserFallback) browserFallback.style.display = 'none';
+    if (telegramApp) {
+        telegramApp.classList.remove('hidden');
+        document.body.style.padding = '0 0 70px 0'; // Возвращаем padding для body
+    }
+    initializeApp();
+    
+    /*
+    // --- ОРИГИНАЛЬНЫЙ КОД ДЛЯ TELEGRAM ---
     try {
         const tg = window.Telegram.WebApp;
         tg.ready();
@@ -63,4 +81,5 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.padding = '0';
         console.error("Telegram WebApp API is not available, showing fallback.", e);
     }
+    */
 }); 
