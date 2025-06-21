@@ -29,7 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Устанавливаем текст приветствия
-    welcomeText.textContent = `Привет, ${userName}!`;
+    if (welcomeText) {
+        welcomeText.textContent = `Привет, ${userName}!`;
+    }
 
     // Функция для переключения вкладок
     function switchTab(tabId) {
