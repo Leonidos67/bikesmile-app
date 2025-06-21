@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let user;
         if (isDev) {
             // Тестовые данные для режима разработки
-            user = { first_name: 'Гость', last_name: 'Тестовый', username: 'your_username', photo_url: 'https://cdn-icons-png.flaticon.com/512/149/149071.png' };
+            user = { first_name: 'Гость', username: 'your_username', photo_url: 'https://cdn-icons-png.flaticon.com/512/149/149071.png' };
         } else {
             user = window.Telegram.WebApp.initDataUnsafe.user;
         }

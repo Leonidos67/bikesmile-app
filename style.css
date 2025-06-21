@@ -135,10 +135,76 @@ main#app {
 }
 
 #user-name {
-    font-size: 1.5em;
     font-weight: 600;
     margin: 0;
     color: var(--header-text-color);
+}
+
+
+.profile-block-all {
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.profile-block-all h4 {
+    font-size: 16px;
+    margin: 0;
+    text-align: left;
+    color: var(--hint-text-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.profile-block-all h4 img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.profile-block-all p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    margin: 8px 0;
+    font-size: 1em;
+    color: var(--main-text-color);
+}
+
+.profile-block-all hr {
+    margin: 10px 0 10px 0;
+    border: 0;
+    height: 1px;
+    background-color: var(--nav-border-color);
+}
+
+.profile-block-2 {
+    margin-top: 20px;
+}
+
+.profile-block-1 p #user-name,
+.profile-block-1 p #user-telegram-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--header-text-color);
+    text-align: right;
+}
+
+.profile-block-1 p {
+    font-size: 14px;
+}
+
+.profile-block-1 p a {
+    color: var(--button-bg-color);
+    text-decoration: none;
+    text-align: 1px;
+}
+
+.profile-block-1 p a:hover {
+    text-decoration: underline;
 }
 
 .hidden {
