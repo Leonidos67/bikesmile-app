@@ -16,23 +16,45 @@ document.addEventListener('DOMContentLoaded', function() {
         const navButtons = document.querySelectorAll('.nav-button');
         const userNameElement = document.getElementById('user-name');
         const userAvatarElement = document.getElementById('user-avatar');
+        const telegramInfoContainer = document.getElementById('telegram-info');
+        const userTelegramLink = document.getElementById('user-telegram-link');
         
         let user;
         if (isDev) {
             // Тестовые данные для режима разработки
-            user = { first_name: 'Тестовый', username: 'dev_user', photo_url: 'https://cdn-icons-png.flaticon.com/512/149/149071.png' };
+            user = { first_name: 'Гость', last_name: 'Тестовый', username: 'your_username', photo_url: 'https://cdn-icons-png.flaticon.com/512/149/149071.png' };
         } else {
             user = window.Telegram.WebApp.initDataUnsafe.user;
         }
 
-        if (welcomeText && user) {
-            welcomeText.textContent = `Привет, ${user.first_name}!`;
-        }
-        if (userNameElement && user) {
-            userNameElement.textContent = user.username ? `@${user.username}` : user.first_name;
-        }
-        if (userAvatarElement && user) {
-            userAvatarElement.src = user.photo_url || 'https://telega.in/channels/alter_universe/avatar?2s';
+        if (user) {
+            // Обновляем приветствие на главной
+            if (welcomeText) {
+                welcomeText.textContent = `Привет, ${user.first_name}!`;
+            }
+
+            // Обновляем имя в профиле
+            if (userNameElement) {
+                let fullName = user.first_name;
+                if (user.last_name) {
+                    fullName += ` ${user.last_name}`;
+                }
+                userNameElement.textContent = fullName;
+            }
+
+            // Обновляем информацию о Telegram
+            if (telegramInfoContainer && userTelegramLink && user.username) {
+                userTelegramLink.href = `https://t.me/${user.username}`;
+                userTelegramLink.textContent = `@${user.username}`;
+                telegramInfoContainer.style.display = 'block';
+            } else if (telegramInfoContainer) {
+                telegramInfoContainer.style.display = 'none';
+            }
+            
+            // Обновляем аватар
+            if (userAvatarElement) {
+                userAvatarElement.src = user.photo_url || 'https://telega.in/channels/alter_universe/avatar?2s';
+            }
         }
 
         function switchTab(tabId) {
@@ -46,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
             button.addEventListener('click', () => switchTab(button.dataset.tab));
         });
 
-        switchTab('home');
+        switchTab('profile');
     }
 
 
