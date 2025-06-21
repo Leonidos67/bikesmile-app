@@ -96,7 +96,7 @@ main#app {
 }
 
 #profile-body {
-    padding: 0 16px;
+    padding: 0 10px;
     text-align: center;
 }
 
@@ -140,12 +140,10 @@ main#app {
     color: var(--header-text-color);
 }
 
-
 .profile-block-all {
-    padding: 15px;
+    padding: 5px 15px;
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .profile-block-all h4 {
@@ -156,6 +154,10 @@ main#app {
     font-weight: 500;
     display: flex;
     align-items: center;
+}
+
+.profile-block-2 h4 {
+    color: var(--nav-text-color);
 }
 
 .profile-block-all h4 img {
@@ -174,15 +176,20 @@ main#app {
     color: var(--main-text-color);
 }
 
-.profile-block-all hr {
+.profile-block-all hr,
+.profile-section hr {
     margin: 10px 0 10px 0;
     border: 0;
     height: 1px;
     background-color: var(--nav-border-color);
 }
 
+.profile-block-1 {
+    padding: 15px 20px 10px 20px;
+    margin: 0 25px 20px;
+}
 .profile-block-2 {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .profile-block-1 p #user-name,
@@ -325,4 +332,16 @@ footer a {
     color: #1da1f2;
     text-decoration: none;
     font-weight: bold;
+}
+
+.profile-section {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+.profile-block-2 {
+    margin-top: 10px;
 } 
