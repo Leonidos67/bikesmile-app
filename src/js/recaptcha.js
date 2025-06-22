@@ -9,11 +9,9 @@ document.getElementById('contactForm').addEventListener('submit', async function
         const formData = validateFormData({
             name: document.getElementById('name').value.trim(),
             email: document.getElementById('email').value.trim(),
-            height: document.getElementById('height').value.trim(),
-            age: document.getElementById('age').value.trim(),
-            passport: document.getElementById('passport').files[0],
-            facePhoto: document.getElementById('face-photo').files[0],
-            message: document.getElementById('message').value.trim()
+            message: document.getElementById('message').value.trim(),
+            helmet: document.getElementById('helmet').checked,
+            privacy: document.getElementById('privacy').checked
         });
         const recaptchaResponse = await getRecaptchaResponse();
         await processFormSubmission(formData, recaptchaResponse);
@@ -27,14 +25,8 @@ function validateFormData(data) {
     const errors = [];
     if (!data.name) errors.push('Name is required!');
     if (!data.email) errors.push('Email is required!');
-    if (!data.message) errors.push('Message is required!');
-    if (!data.height) errors.push('Height is required!');
-    if (!data.age) errors.push('Age is required!');
-    if (!data.passport) errors.push('Passport photo is required!');
-    if (!data.facePhoto) errors.push('Face photo is required!');
     if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) errors.push('Invalid email!');
-    if (data.age && (parseInt(data.age) < 18 || parseInt(data.age) > 100)) errors.push('Age must be between 18 and 100.');
-    if (data.height && (parseInt(data.height) < 100 || parseInt(data.height) > 250)) errors.push('Height must be between 100 and 250 cm.');
+    if (!data.privacy) errors.push('You must agree to the Privacy Policy!');
 
     if (errors.length) throw new Error(errors.join(', '));
     return data;

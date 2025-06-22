@@ -1,15 +1,6 @@
-:root {
-    --form-bg: #ffffff;
-    --input-border-color: #ccc;
-    --input-focus-border-color: var(--button-bg-color, #007bff);
-    --input-text-color: #333;
-    --label-color: #555;
-    --button-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
 .container-form {
     background-color: var(--form-bg);
-    padding: 25px 30px;
+    padding: 15px 20px;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     margin-top: 20px;
@@ -23,6 +14,7 @@
 
 .form-group {
     position: relative;
+    text-align: left;
 }
 
 .form-group label {
@@ -108,4 +100,30 @@
 .submit-btn:active {
     transform: translateY(0);
     box-shadow: var(--button-shadow);
-} 
+}
+
+.form-group.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group.checkbox-group input[type="checkbox"] {
+    width: auto;
+    accent-color: var(--button-bg-color);
+}
+
+.form-group.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+    color: var(--main-text-color);
+}
+
+.form-group.checkbox-group a {
+    color: var(--button-bg-color);
+    text-decoration: none;
+}
+
+.form-group.checkbox-group a:hover {
+    text-decoration: underline;
+}

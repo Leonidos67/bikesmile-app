@@ -82,24 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
             fabButton.addEventListener('click', () => switchTab('start'));
         }
 
-        // --- Обработчики для кастомных полей загрузки файлов ---
-        function setupFileInput(inputId, textId) {
-            const input = document.getElementById(inputId);
-            const textElement = document.getElementById(textId);
-            if (input && textElement) {
-                input.addEventListener('change', () => {
-                    if (input.files.length > 0) {
-                        textElement.textContent = input.files[0].name;
-                    } else {
-                        textElement.textContent = 'Файл не выбран';
-                    }
-                });
-            }
-        }
-
-        setupFileInput('passport', 'passport-file-name');
-        setupFileInput('face-photo', 'face-photo-file-name');
-
         switchTab('start');
     }
 
