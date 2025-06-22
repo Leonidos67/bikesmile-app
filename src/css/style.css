@@ -1,0 +1,352 @@
+:root {
+    --app-bg-color: #f5f5f5;
+    --main-text-color: #222;
+    --header-text-color: #333;
+    --hint-text-color: #777;
+    --button-bg-color: #fbbc00;
+    --button-text-color: #0e0a00;
+    --nav-bg: #fff;
+    --nav-active-bg: #f0f0f0;
+    --nav-text-color: #0e0a00;
+    --nav-border-color: #e0e0e0;
+}
+
+#browser-fallback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.fallback-content {
+    max-width: 450px;
+}
+
+.fallback-content p {
+    font-size: 1.1em;
+    color: var(--main-text-color);
+    line-height: 1.6;
+}
+
+.fallback-content .site-link-p {
+    margin-top: 25px;
+    font-size: 1em;
+    color: var(--hint-text-color);
+}
+
+.fallback-content .site-link {
+    color: var(--button-bg-color);
+    text-decoration: underline;
+}
+
+header {
+    text-align: center;
+    padding: 20px 16px 10px;
+}
+
+#welcome-text {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--header-text-color);
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0 0 70px 0; /* Отступ снизу для нав. панели */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--app-bg-color);
+    color: var(--main-text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main#app {
+    flex: 1;
+    padding: 16px;
+    text-align: center;
+}
+
+#profile.tab-content {
+    padding: 0;
+}
+
+#profile-header {
+    border-radius: 10px;
+    position: relative;
+    height: 10vh;
+    margin-bottom: 65px; /* Половина высоты аватара + отступ */
+    background-image: repeating-linear-gradient(
+        -45deg,
+        var(--nav-border-color),
+        var(--nav-border-color) 4px,
+        transparent 4px,
+        transparent 8px
+    );
+}
+
+#cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#profile-body {
+    padding: 0 10px;
+    text-align: center;
+}
+
+.tab-content {
+    animation: fadeIn 0.5s;
+}
+
+.tab-content h2 {
+    color: var(--header-text-color);
+}
+
+.tab-content p {
+    font-size: 1.1em;
+    color: var(--hint-text-color);
+}
+
+#profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#user-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid var(--app-bg-color);
+    object-fit: cover;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    background-color: var(--app-bg-color);
+}
+
+#user-name {
+    font-weight: 600;
+    margin: 0;
+    color: var(--header-text-color);
+}
+
+.profile-block-all {
+    padding: 5px 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.profile-block-all h4 {
+    font-size: 16px;
+    margin: 0;
+    text-align: left;
+    color: var(--hint-text-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.profile-block-2 h4 {
+    color: var(--nav-text-color);
+}
+
+.profile-block-all h4 img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.profile-block-all p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    margin: 8px 0;
+    font-size: 1em;
+    color: var(--main-text-color);
+}
+
+.profile-block-all hr,
+.profile-section hr {
+    margin: 10px 0 10px 0;
+    border: 0;
+    height: 1px;
+    background-color: var(--nav-border-color);
+}
+
+.profile-block-1 {
+    padding: 20px 20px 15px 20px;
+    margin: 0 25px 20px;
+}
+.profile-block-2 {
+    margin-top: 10px;
+}
+
+.profile-block-1 p #user-name,
+.profile-block-1 p #user-telegram-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--header-text-color);
+    text-align: right;
+}
+
+.profile-block-1 p {
+    font-size: 14px;
+}
+
+.profile-block-1 p a {
+    color: var(--button-bg-color);
+    text-decoration: none;
+    text-align: 1px;
+}
+
+.profile-block-1 p a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+#start-rent {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#start-rent:active {
+    transform: scale(0.98);
+}
+
+#fab-button {
+    position: fixed;
+    z-index: 1000;
+    bottom: 70px;
+    width: calc(100% - 20px);
+    height: 50px;
+    padding: 0 25px;
+    left: 10px;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    visibility: visible;
+}
+
+#fab-button.fab-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    pointer-events: none; /* чтобы нельзя было кликнуть на невидимую кнопку */
+}
+
+#fab-button:active {
+    transform: scale(0.98);
+}
+
+.tg-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--nav-bg);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    border-top: 1px solid var(--nav-border-color);
+    padding: 0 8px; /* Добавляем отступы по бокам */
+    box-sizing: border-box;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: var(--nav-text-color); /* ВСЕГДА ЧЕРНЫЙ ТЕКСТ */
+    cursor: pointer;
+    flex-grow: 1;
+    transition: background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 56px; /* Делаем кнопку чуть меньше по высоте */
+    border-radius: 10px; /* Скругление для всех, чтобы анимация была плавной */
+}
+
+.nav-button img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+}
+
+.nav-button span {
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+.nav-button.active {
+    background-color: var(--nav-active-bg); /* Фон активной кнопки */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+    text-align: center;
+    padding: 16px;
+    background: #222;
+    color: #fff;
+}
+footer a {
+    color: #1da1f2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.profile-section {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+.profile-block-2 {
+    margin-top: 10px;
+} 

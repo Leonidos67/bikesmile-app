@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Прокат велосипедов</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/form.css">
+
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+    <title>Bike&Smile MiniApp</title>
 </head>
 <body>
     
@@ -29,6 +34,47 @@
             <div id="start" class="tab-content">
                  <h2>Старт</h2>
                  <p>Здесь будет информация о начале аренды.</p>
+
+                <div class="container-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Имя:</label>
+                            <input type="text" name="name" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                         <div class="form-group">
+                            <label for="height">Рост (см):</label>
+                            <input type="number" name="height" id="height" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Возраст:</label>
+                            <input type="number" name="age" id="age" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Паспорт (фото):</label>
+                            <label for="passport" class="file-input-label">Выберите файл</label>
+                            <input type="file" name="passport" id="passport" accept="image/*" required>
+                            <span class="file-name" id="passport-file-name">Файл не выбран</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Фото лица:</label>
+                            <label for="face-photo" class="file-input-label">Выберите файл</label>
+                            <input type="file" name="face-photo" id="face-photo" accept="image/*" required>
+                            <span class="file-name" id="face-photo-file-name">Файл не выбран</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение:</label>
+                            <textarea name="message" id="message" required></textarea>
+                        </div>
+                        <div class="g-recaptcha" data-sitekey="6Lfue2krAAAAANmJnLEcrdY7siN4p6ZLNGo5jKGj"></div>
+                        <button type="submit" class="submit-btn">Забронировать</button>
+                    </form>
+                    <div id="messageContainer"></div>
+                </div>
+
             </div>
 
             <div id="profile" class="tab-content hidden">
@@ -107,7 +153,8 @@
         </nav>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./src/js/script.js"></script>
+    <script src="./src/js/recaptcha.js"></script>
     
 </body>
 </html> 
