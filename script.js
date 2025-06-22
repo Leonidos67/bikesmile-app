@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
             button.addEventListener('click', () => switchTab(button.dataset.tab));
         });
 
-        switchTab('profile');
+        switchTab('start');
     }
 
 
